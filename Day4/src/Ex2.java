@@ -1,6 +1,4 @@
-/**
- * Created by Thu Thuy Nguyen on 6/24/2016.
- */
+
 
 import java.util.Scanner;
 

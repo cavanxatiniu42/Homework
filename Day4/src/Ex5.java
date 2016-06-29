@@ -10,6 +10,8 @@ public class Ex5{
         int x = sc.nextInt();
         int y = sc.nextInt();
         swap(x, y);
+        System.out.println(x);
+        System.out.println(y);
 
     }
     private static void swap(int a, int b){

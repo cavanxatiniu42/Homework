@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -14,22 +15,22 @@ public class Ex6 {
             Scanner sc1 = new Scanner(System.in);
             array[i] = sc1.nextLine();
         }
-        reverseArray(array, len);
-
+        reverseArray(array);
+        System.out.println(Arrays.toString(array));
     }
 
-    private static void reverseArray(String[] array, int len){
+    private static void reverseArray(String[] array){
 
         String tmp;
-        for (int i = 0, j = len-1; i<=j; i++, j--){
+        for (int i = 0, j = array.length-1; i<=j; i++, j--){
             tmp = array[i];
             array[i] = array[j];
             array[j] = tmp;
         }
-        for(int i=0;i<len;i++)
-        {
-            System.out.println(array[i]);
-        }
+//        for(int i=0;i<len;i++)
+//        {
+//            System.out.println(array[i]);
+//        }
 //        System.out.println("The new array is: "+ array[len]);
 
 

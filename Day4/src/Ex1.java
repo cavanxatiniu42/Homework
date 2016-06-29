@@ -1,6 +1,4 @@
-/**
- * Created by Thu Thuy Nguyen on 6/24/2016.
- */
+
 import java.util.Scanner;
 public class Ex1 {
     public static void main(String[] args) {
