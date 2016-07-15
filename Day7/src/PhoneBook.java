@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class PhoneBook {
 
     private int numberOfEntries;
-    private PhoneEntry[] phoneEntries;
+    public PhoneEntry[] phoneEntries;
     public Scanner sc = new Scanner(System.in);
 
     public PhoneEntry[] getPhoneEntries() {
@@ -55,17 +55,33 @@ public class PhoneBook {
     }
     public boolean deleteEntry(String entryName){
         int index =0;
+        PhoneEntry[] newPhoneEntry = new PhoneEntry[phoneEntries.length-1];
         if (isDuplicateName(entryName)) {
-            for (int i = 0; i < phoneEntries.length; i++) {
-                if (entryName.equals(phoneEntries[i].getName())) {
-                    index = i;
+            for (int i = 0; i <phoneEntries.length ; i++) {
+                if (entryName.equals(phoneEntries[i].getName())){
+                    index =i;
                 }
             }
-            for (int i = index+1; i <phoneEntries.length ; i++) {
-                phoneEntries[i-1]= phoneEntries[i];
+            for (int i= 0; i<index;i++){
+                newPhoneEntry[i]=phoneEntries[i];
+            }
+            for (int i = index; i <phoneEntries.length-1 ; i++) {
+                newPhoneEntry[i]=phoneEntries[i+1];
             }
             numberOfEntries--;
+            phoneEntries=newPhoneEntry;
             return true;
+//            for (int i = 0; i < phoneEntries.length; i++) {
+//                if (entryName.equals(phoneEntries[i].getName())) {
+//                    index = i;
+//                }
+//            }
+//            for (int i = index+1; i <phoneEntries.length ; i++) {
+//                phoneEntries[i-1]= phoneEntries[i];
+//            }
+//            numberOfEntries--;
+//            return true;
+
         }
         return false;
     }

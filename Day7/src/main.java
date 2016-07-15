@@ -79,6 +79,7 @@ public class Main {
                     String deleteName = sc.nextLine();
                     if (phoneBook.deleteEntry(deleteName)){
                         System.out.println("successful");
+                        System.out.println(phoneBook.phoneEntries.length);
                     }else {
                         System.out.println("failed");
                     }
