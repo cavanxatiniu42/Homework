@@ -5,7 +5,7 @@ import java.util.ArrayList;
  */
 public class PhoneBook2 {
     private int numberOfEntries;
-    public ArrayList<PhoneEntry> phoneEntries = new ArrayList<PhoneEntry>(numberOfEntries);
+    public ArrayList<PhoneEntry> phoneEntries = new ArrayList<PhoneEntry>();
     public int getNumberOfEntries() {
         return numberOfEntries;
     }
