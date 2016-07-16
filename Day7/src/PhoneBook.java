@@ -1,14 +1,10 @@
-import java.util.Scanner;
-
 public class PhoneBook {
 
     private int numberOfEntries;
     public PhoneEntry[] phoneEntries;
-    public Scanner sc = new Scanner(System.in);
 
     public PhoneEntry[] getPhoneEntries() {
-        return phoneEntries;//ơ sao chỗ này chỗ này   à n k có trong bài hsao ấy, Thì bài nó có bắt cậu in ra số phần tử đâu, đây là cậu muốn tées thì thêm vào thôi
-        // hey xong n trả về 1 phần tử r nhá, mà cái show phone book n vẫn k có gì n
+        return phoneEntries;
     }
 
     public PhoneBook() {
@@ -30,9 +26,8 @@ public class PhoneBook {
             numberOfEntries++;
             phoneEntries =newPhoneEntries; //
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
     public boolean modifyEntryName (String oldName, String newName){
         for (int i = 0; i<phoneEntries.length;i++){
@@ -54,36 +49,18 @@ public class PhoneBook {
         return false;
     }
     public boolean deleteEntry(String entryName){
-        int index =0;
-        PhoneEntry[] newPhoneEntry = new PhoneEntry[phoneEntries.length-1];
-        if (isDuplicateName(entryName)) {
-            for (int i = 0; i <phoneEntries.length ; i++) {
-                if (entryName.equals(phoneEntries[i].getName())){
-                    index =i;
-                }
-            }
-            for (int i= 0; i<index;i++){
-                newPhoneEntry[i]=phoneEntries[i];
-            }
-            for (int i = index; i <phoneEntries.length-1 ; i++) {
-                newPhoneEntry[i]=phoneEntries[i+1];
-            }
-            numberOfEntries--;
-            phoneEntries=newPhoneEntry;
-            return true;
-//            for (int i = 0; i < phoneEntries.length; i++) {
-//                if (entryName.equals(phoneEntries[i].getName())) {
-//                    index = i;
-//                }
-//            }
-//            for (int i = index+1; i <phoneEntries.length ; i++) {
-//                phoneEntries[i-1]= phoneEntries[i];
-//            }
-//            numberOfEntries--;
-//            return true;
+       if(isDuplicateName(entryName)){
+           for(int i=0; i<phoneEntries.length;i++){
+               if(entryName.equals(phoneEntries[i].getName())){
+                   for(int j =i; j<phoneEntries.length-1;j++){
+                       phoneEntries[i]=phoneEntries[i+1];
+                   }
 
-        }
-        return false;
+               }
+               numberOfEntries--;
+               return true;
+           }
+       } return false;
     }
     public PhoneEntry findEntryByNumber(String entryNumber){
         for (int i=0;i<phoneEntries.length;i++){

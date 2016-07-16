@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class Main {
    // private static PhoneEntry phoneEntry = new PhoneEntry();
-    private static PhoneBook phoneBook = new PhoneBook();
+    private static PhoneBook2 phoneBook = new PhoneBook2();
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         int option;
         do {
             System.out.println("1. Add an contact");
@@ -16,29 +16,29 @@ public class Main {
             System.out.println("6. Delete contact");
             System.out.println("7. Show phone book");
             System.out.println("8. Exit");
-            switch (option = sc.nextInt()){
+            switch (option = input.nextInt()){
                 case 1:
 
-                    sc.nextLine();
+                    input.nextLine();
                     System.out.println("Input name of contact");
-                    String name = sc.nextLine();
+                    String name = input.nextLine();
                    // phoneEntry.setName(name);
                     System.out.println("Input number of contact");
-                    String phoneNumber = sc.nextLine();
+                    String phoneNumber = input.nextLine();
                    // phoneEntry.setPhoneNumber(phoneNumber);
                     PhoneEntry newPhoneEntry = new PhoneEntry(name, phoneNumber);
-                    if (phoneBook.addEntry(newPhoneEntry)){
+                    if (phoneBook.addEntries(newPhoneEntry)){
                         System.out.println("Successful");
                     } else {
                         System.out.println("Failed");
                     }
                     break;
                 case 2:
-                    sc.nextLine();
+                    input.nextLine();
                     System.out.println("Input name want to edit: ");
-                    String oldName = sc.nextLine();
+                    String oldName = input.nextLine();
                     System.out.println("Input new name: ");
-                    String newName = sc.nextLine();
+                    String newName = input.nextLine();
                     if (phoneBook.modifyEntryName(oldName, newName)){
                         System.out.println("Successful");
                         System.out.println(phoneBook.toString());
@@ -48,12 +48,12 @@ public class Main {
                     }
                     break;
                 case 3:
-                    sc.nextLine();
+                    input.nextLine();
                     System.out.println("Input name want to edit number: ");
-                    String entryName = sc.nextLine();
+                    String entryName = input.nextLine();
                     System.out.println("Input new number: ");
-                    String newNumber = sc.nextLine();
-                    if (phoneBook.modifyEntryNumber(entryName, newNumber)){
+                    String newNumber = input.nextLine();
+                    if (phoneBook.modifyNumber(entryName, newNumber)){
                         System.out.println("Successful");
                         System.out.println(phoneBook.toString());
                     }
@@ -62,24 +62,24 @@ public class Main {
                     }
                     break;
                 case 4:
-                    sc.nextLine();
+                    input.nextLine();
                     System.out.println("Find number by name: ");
-                    String foundName = sc.nextLine();
+                    String foundName = input.nextLine();
                     System.out.println(phoneBook.findEntryByName(foundName));
                     break;
                 case 5:
-                    sc.nextLine();
+                    input.nextLine();
                     System.out.println("Find contact by number: ");
-                    String foundNumber = sc.nextLine();
+                    String foundNumber = input.nextLine();
                     System.out.println(phoneBook.findEntryByNumber(foundNumber));
                     break;
                 case 6:
-                    sc.nextLine();
+                    input.nextLine();
                     System.out.println("Delete contact: ");
-                    String deleteName = sc.nextLine();
+                    String deleteName = input.nextLine();
                     if (phoneBook.deleteEntry(deleteName)){
                         System.out.println("successful");
-                        System.out.println(phoneBook.phoneEntries.length);
+        //                System.out.println(phoneBook.phoneEntries.length);
                     }else {
                         System.out.println("failed");
                     }
