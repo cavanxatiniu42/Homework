@@ -67,7 +67,7 @@ public class PhoneBook2 {
         String result = "";
         for (int i = 0; i<phoneEntries.size();i++){
             if (!phoneEntries.get(i).equals(null))
-            result = result +phoneEntries.get(i)+ "\r\n";
+            result = result +phoneEntries.get(i).toString()+ "\r\n";
         }
         return result;
     }
