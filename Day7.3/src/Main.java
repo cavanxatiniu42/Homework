@@ -60,9 +60,11 @@ public class Main {
                     input.nextLine();
                     System.out.println("Input contact name:");
                     String entryName = input.nextLine();
-                    System.out.println("Input new number: ");
-                    String entryNumber = input.nextLine();
-                    if (phoneBook.modifyNumber(entryName, entryNumber)){
+                    System.out.println("Input old number: ");
+                    String oldNumber = input.nextLine();
+                    System.out.println("Input new number");
+                    String newNumber = input.nextLine();
+                    if (phoneBook.modifyNumber(entryName, oldNumber, newNumber)){
                         System.out.println("successful");
                     }else {
                         System.out.println("fail");

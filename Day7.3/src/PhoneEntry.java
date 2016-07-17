@@ -22,7 +22,10 @@ public class PhoneEntry {
     public void setNumber(String number){
 
     }
-    public String getPhoneNumber(){
+    public ArrayList<String> getPhoneNumber(){
+        return phoneNumber;
+    }
+    public String getPhoneNumberString(){
         String number = " ";
         for (int i = 0; i <phoneNumber.size() ; i++) {
             number = number + phoneNumber.get(i).toString()+ ",";

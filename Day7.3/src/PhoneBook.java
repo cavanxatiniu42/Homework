@@ -5,7 +5,7 @@ public class PhoneBook {
     public ArrayList<String> phoneNumber = new ArrayList();
 
     public boolean addEntries(PhoneEntry entry){
-        if (!isDuplicateName(entry.getName()) && !isDuplicateNumber(entry.getPhoneNumber())){
+        if (!isDuplicateName(entry.getName()) && !isDuplicateNumber(entry.getPhoneNumberString())){
             phoneEntries.add(entry);
             return true;
         }
@@ -32,10 +32,11 @@ public class PhoneBook {
         }
         return false;
     }
-    public boolean modifyNumber (String entryName, String number){
+    public boolean modifyNumber (String entryName, String oldNumber, String newNumber){
         if (isDuplicateName(entryName)) {
             PhoneEntry entry = findEntryByName(entryName);
-
+            int index = entry.getPhoneNumber().indexOf(oldNumber);
+                entry.getPhoneNumber().set(index,newNumber);
             return true;
         }
       return false;
@@ -63,7 +64,7 @@ public class PhoneBook {
     }
     public PhoneEntry findEntryByNumber (String entryNumber){
         for (int i = 0; i <phoneEntries.size() ; i++) {
-            if (phoneEntries.get(i).getPhoneNumber().contains(entryNumber))
+            if (phoneEntries.get(i).getPhoneNumberString().contains(entryNumber))
                 return phoneEntries.get(i);
         }
         return null;
@@ -93,7 +94,7 @@ public class PhoneBook {
                 }
             }
         }
-       System.out.println("hi2");
+
         return false;
     }
 
