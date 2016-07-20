@@ -88,8 +88,8 @@ public class PhoneBook {
 
     private boolean isDuplicateNumber (String entryNumber){
         for (int i = 0; i <phoneEntries.size() ; i++) {
-            for (int j = 0; j <phoneNumber.size() ; j++) {
-                if (entryNumber.equals(phoneNumber.get(i))){
+            for (int j = 0; j <phoneEntries.get(i).getPhoneNumber().size() ; j++) {
+                if (entryNumber.equals(phoneEntries.get(i).getPhoneNumber().get(i))){
                     return true;
                 }
             }
