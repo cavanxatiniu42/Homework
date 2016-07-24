@@ -4,10 +4,6 @@ public class Mage extends Hero{
     }
 
     @Override
-    public void fight(Hero hero) {
-
-    }
-    @Override
     public String tauntLine(){
         return "Mind over matter";
     }

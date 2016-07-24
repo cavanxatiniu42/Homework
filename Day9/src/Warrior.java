@@ -6,9 +6,7 @@ public class Warrior extends Hero{
     public String tauntLine(){
         return "I AM MIGHTY";
     }
-    public void fight(Hero hero) {
 
-    }
     public void setAttack(Weapons weapons){
         weapons.setTaunt(weapons.getName());
         if (weapons.getName().equals("Axe")){

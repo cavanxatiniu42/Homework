@@ -1,13 +1,15 @@
 
 public abstract class Hero {
+    private final int firstLevel = 1;
+    private final int firstHp = 100;
     protected String name;
-    protected int level;
+    protected int level = firstLevel;
     protected int attack;
     protected int defense;
     protected int strength;
     protected int dexterity;
     protected int intelligent;
-    protected int hp;
+    protected int hp = firstHp;
     protected Weapons weapons;
     protected Armors armors;
 
@@ -23,9 +25,14 @@ public abstract class Hero {
         this.name= name;
 
     }
-    public abstract void fight(Hero hero);
+    public void fight(Hero hero) {
+        do {
+            hero.hp = this.attack - hero.defense;
+            this.hp = hero.attack - this.defense;
+        }while (hero.getHp()!=0 || this.getHp() != 0);
+    }
 
-
+    public int getHp (){return hp;}
     public String getName() {
         return name;
     }

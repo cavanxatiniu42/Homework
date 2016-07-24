@@ -4,11 +4,6 @@ public class Archer extends Hero{
         super(name);
     }
 
-    @Override
-    public void fight(Hero hero) {
-
-    }
-
 
     @Override
     public String tauntLine(){
