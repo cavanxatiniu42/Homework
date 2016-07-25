@@ -8,13 +8,9 @@ public class Mage extends Hero{
         return "Mind over matter";
     }
     public void setAttack(Weapons weapons){
-        weapons.setTaunt(weapons.getName());
-        if (weapons.getName().equals("staff")){
-            attack = level + weapons.getLevel()+intelligent;
-        } else {
-            attack = level + weapons.getLevel();
-        }
-        weapons.getTaunt();
+      //  weapons.setTaunt(weapons.getName());
+        attack += level + weapons.getBonusIntelligent() + weapons.getLevel();
+      //  weapons.getTaunt();
     }
     public void setDefense(Armors armors){
         armors.setTaunt(armors.getName());

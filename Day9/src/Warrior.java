@@ -1,4 +1,5 @@
 public class Warrior extends Hero{
+
     protected Warrior(String name) {
         super(name);
     }
@@ -8,22 +9,14 @@ public class Warrior extends Hero{
     }
 
     public void setAttack(Weapons weapons){
-        weapons.setTaunt(weapons.getName());
-        if (weapons.getName().equals("Axe")){
-            attack = level+ weapons.getLevel() + strength;
-        } else {
-            attack = level + weapons.getLevel();
-        }
-        weapons.getTaunt();
+       // weapons.setTaunt(weapons.getName());
+        attack = level+ weapons.getLevel()+ weapons.getBonusStrength();
+     //   weapons.getTaunt();
     }
     public void setDefense(Armors armors){
-        armors.setTaunt(armors.getName());
-        if (armors.getName().equals("Chainmail")){
-            defense = level + armors.getLevel()+ strength;
-        } else {
-            defense = level + armors.getLevel();
-        }
-        armors.getTaunt();
+      //  armors.setTaunt(armors.getName());
+        defense =level+ armors.getLevel()+weapons.getBonusStrength();
+       // armors.getTaunt();
     }
 
 }
