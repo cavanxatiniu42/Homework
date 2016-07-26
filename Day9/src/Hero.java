@@ -6,9 +6,6 @@ public abstract class Hero {
     protected int level = firstLevel;
     protected int attack;
     protected int defense;
-    protected int strength;
-    protected int dexterity;
-    protected int intelligent;
     protected int hp = firstHp;
     protected Weapons weapons;
     protected Armors armors;
@@ -73,5 +70,9 @@ public abstract class Hero {
         return defense;
     }
 
-
+    public Hero toHero(Hero hero){
+        hero.attack = this.attack;
+        hero.defense = this.defense;
+        return hero;
+    }
 }

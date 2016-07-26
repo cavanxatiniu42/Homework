@@ -9,14 +9,12 @@ public class Warrior extends Hero{
     }
 
     public void setAttack(Weapons weapons){
-       // weapons.setTaunt(weapons.getName());
         attack = level+ weapons.getLevel()+ weapons.getBonusStrength();
-     //   weapons.getTaunt();
+        weapons.getTaunt();
     }
     public void setDefense(Armors armors){
-      //  armors.setTaunt(armors.getName());
-        defense =level+ armors.getLevel()+weapons.getBonusStrength();
-       // armors.getTaunt();
+        defense =level+ armors.getLevel()+armors.getBonusStrength();
+        armors.getTaunt();
     }
 
 }

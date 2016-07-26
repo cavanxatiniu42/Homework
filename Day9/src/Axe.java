@@ -9,7 +9,7 @@ public class Axe extends Weapons {
 
     }
     public int getBonusStrength(){
-        System.out.println("hi2");
+
         return bounsStrength;
     }
 }
