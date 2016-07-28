@@ -42,7 +42,9 @@ public abstract class Hero {
         return level;
     }
 
-    public void setLevel() {
+    public void setLevel(int level) {
+        attack = attack - this.level + level;
+        defense = defense - this.level + level;
         this.level = level;
     }
 
@@ -57,12 +59,8 @@ public abstract class Hero {
     public void setWeapons(Weapons weapons) {
         this.weapons = weapons;
     }
-    public void setAttack(){
-        this.attack = level;
-    }
-    public void setDefense(){
-        this.defense = level;
-    }
+    
+    
     public int getAttack(){
         return attack;
     }
